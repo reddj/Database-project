@@ -1,8 +1,11 @@
-# Database-project
+# Movie-Database-project
 
 <p>
-	This will be a movie database. It will have movies, directors, cast. I will show, one to one, one to many and many to many realationships. 
+	This project will be the backend for a movie database. The database will store: movies, directors and actors.   
 </p>
 <p>
-	I will be using SQL for this database.
+	A user can change the actors age and add/delete a driector, actor, or movie.
+</p>
+<p>
+	This database was created with postgresql, express and javascript.
 </p>

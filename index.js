@@ -30,29 +30,32 @@ const create2 = "INSERT INTO actor(actor_ID, name, age) VALUES ($1, $2, $3)"
 const values2 = []
 
 
-//this function can update the actors age 
+// This is a function that will update an actors age in the database
 function updateActor(actor_ID, age){
 	const update = `UPDATE actor SET age = ${age} WHERE actor_ID = ${actor_ID}`
 	return update
 }
 
+// This is a function that will delete an actor from the database
 function deleteActor(actor_ID){
 	const trashActor = `DELETE FROM actor WHERE actor_ID = ${actor_ID}`
 	return trashActor
 }
 
+// This is a function that will delete a director from the database
 function deleteDirector(director_ID){
 	const trashDirector = `DELETE FROM director WHERE director_ID = ${director_ID}`
 	return trashDirector
 }
 
+// This is a function that will delete a movie from the database
 function deleteMovie(movie_ID){
 	const trashMovie = `DELETE FROM movies WHERE movie_ID = ${movie_ID}`
 	return trashMovie
 }
 
 
-
+// This is for selecting a movie from the database
 app.get('/movies', (request, response) => {
 	client.query(query).then(result => {
 		response.send(result.rows)
@@ -61,7 +64,7 @@ app.get('/movies', (request, response) => {
 	})
 })
 
-
+// This is for selecting a director from the database
 app.get('/director', (request, response) => {
 	client.query(query1).then(result => {
 		response.send(result.rows)
@@ -70,7 +73,7 @@ app.get('/director', (request, response) => {
 	})
 })
 
-
+// This is for selecting an actor from the database
 app.get('/actor', (request, response) => {
 	client.query(query2).then(result => {
 		response.send(result.rows)
@@ -79,7 +82,7 @@ app.get('/actor', (request, response) => {
 	})
 })
 
-
+// This is for selecting a movie and an actor from the database
 app.get('/movie_actor', (request, response) => {
 	client.query(query3).then(result => {
 		response.send(result.rows)
@@ -88,6 +91,7 @@ app.get('/movie_actor', (request, response) => {
 	})
 })
 
+// This is for creating and adding a new movie to the database
 app.post('/movies', (request, response) => {
 	for (let movie in request.body)
 		values.push(request.body[movie])
@@ -98,6 +102,7 @@ app.post('/movies', (request, response) => {
 	})
 })
 
+// This is for creating and adding a new director to the database
 app.post('/director', (request, response) => {
 	for (let director in request.body)
 		values1.push(request.body[director])
@@ -108,6 +113,7 @@ app.post('/director', (request, response) => {
 	})
 })
 
+// This is for creating and adding a new actor to the database
 app.post('/actor', (request, response) => {
 	for (let actor in request.body)
 		values2.push(request.body[actor])
