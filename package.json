@@ -1,0 +1,24 @@
+{
+  "name": "database-project",
+  "version": "1.0.0",
+  "description": "<p> \tThis will be a movie database. It will have movies, directors, cast. I will show, one to one, one to many and many to many realationships.  </p> <p> \tI will be using SQL for this database. </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reddj/Database-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reddj/Database-project/issues"
+  },
+  "homepage": "https://github.com/reddj/Database-project#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "pg": "^7.8.0"
+  }
+}
